@@ -1,14 +1,14 @@
 # Mastering Docker Swarm & Simplifying Container Orchestration
 Table Of Content:
 - [Mastering Docker Swarm \& Simplifying Container Orchestration](#mastering-docker-swarm--simplifying-container-orchestration)
-  - [1.What is Docker?](#1what-is-docker)
-  - [2.What is Docker daemon?](#2what-is-docker-daemon)
-  - [3.Docker architecture](#3docker-architecture)
-  - [4.Kubernetes VS Docker Swarm](#4kubernetes-vs-docker-swarm)
-  - [5.What Is Docker Swarm?](#5what-is-docker-swarm)
+  - [1. What is Docker?](#1-what-is-docker)
+  - [2. What is Docker daemon?](#2-what-is-docker-daemon)
+  - [3. Docker architecture](#3-docker-architecture)
+  - [4. Kubernetes VS Docker Swarm](#4-kubernetes-vs-docker-swarm)
+  - [5. What Is Docker Swarm?](#5-what-is-docker-swarm)
   - [6. How Does Docker Swarm Work?](#6-how-does-docker-swarm-work)
   - [7. Docker Swarm Cluster Setup](#7-docker-swarm-cluster-setup)
-  - [8.Deploy Your Service on Docker Swarm](#8deploy-your-service-on-docker-swarm)
+  - [8. Deploy Your Service on Docker Swarm](#8-deploy-your-service-on-docker-swarm)
 
 In the fast-paced world of application development, efficiency is key. Docker revolutionized the scene by offering lightweight containerization as an alternative to cumbersome virtual machines (VMs).
 
@@ -16,14 +16,14 @@ Now, with Docker Swarm, managing clusters of Docker hosts is a breeze. This orch
 
 In this article, we'll explore Docker Swarm's architecture and practical usage. But first, let's grasp the basics of Docker containerization and its significance in modern development.
 
-## 1.What is Docker?
+## 1. What is Docker?
 Docker is a platform for developing, packaging & running applications in containers, providing a consistent and portable environment across different systems.\
 It uses operating-system-level virtualization to deliver software in packages called containers
 
-## 2.What is Docker daemon?
+## 2. What is Docker daemon?
 Docker daemon runs on the host operating system. It is responsible for running containers to manage docker services. 
 
-## 3.Docker architecture
+## 3. Docker architecture
 Docker follows Client-Server architecture, which includes the three main components that are Docker Client, Docker Host, and Docker Registry.
 
 Docker Client: The user interface for interacting with Docker through commands or an API.
@@ -36,7 +36,7 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
   <img src="./image/high-level-overview-of-docker-architecture.png" alt="Docker Architecture"/>
 </p>
 
-## 4.Kubernetes VS Docker Swarm
+## 4. Kubernetes VS Docker Swarm
 
 Modern businesses are relying on containerization technologies to simplify the process of deploying and managing complex applications.Here's a comparison between Kubernetes and Docker Swarm.
 
@@ -60,7 +60,7 @@ Modern businesses are relying on containerization technologies to simplify the p
 | **Popularity**          | Widely adopted by enterprises and cloud providers. | Gaining popularity, but not as widely adopted as Kubernetes. |
 | **Ecosystem**           | Rich ecosystem with extensive tools and integrations. | Growing ecosystem with fewer tools and integrations compared to Kubernetes. |
 
-## 5.What Is Docker Swarm?
+## 5. What Is Docker Swarm?
 
 Docker Swarm is a container orchestration tool that allows you to manage a cluster of Docker hosts and deploy and scale containerized applications seamlessly. It forms a part of the Docker ecosystem and simplifies the management of containerized environments, making it easier for developers and operators to deploy and maintain applications at scale.
 
@@ -121,8 +121,8 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 
 **7.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
 
-**7.2 Initializing a Swarm**\
-[Reference](https://docs.docker.com/engine/swarm/)\
+**7.2 Initializing a Swarm**[Reference](https://docs.docker.com/engine/swarm/)
+
 Initialize Swarm\
 `docker swarm init`
 
@@ -163,14 +163,14 @@ Remove Node from Swarm\
 Node itself Leave from cluster.\
 `docker swarm leave`
 
-## 8.Deploy Your Service on Docker Swarm
+## 8. Deploy Your Service on Docker Swarm
 
 To add replicas to the Docker Swarm service with replicas.\
-`docker service create --name nginx --publish 80:80 --replicas 3 nginx`
+`docker service create --name nginx --publish 80:80 --replicas 3 nginx`\
 To list the services in a Docker Swarm cluster.\
 `docker service ls`
 
-To update the number of replicas for a Docker Swarm service.
+To update the number of replicas for a Docker Swarm service.\
 `docker service update --replicas 5 nginx`
 
 To delete the "nginx" service in Docker Swarm.\
