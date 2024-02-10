@@ -9,6 +9,7 @@ Table Of Content:
   - [6. How Does Docker Swarm Work?](#6-how-does-docker-swarm-work)
   - [7. Docker Swarm Cluster Setup](#7-docker-swarm-cluster-setup)
   - [8. Deploy Your Service on Docker Swarm](#8-deploy-your-service-on-docker-swarm)
+  - [`sudo docker service logs nginx -f`](#sudo-docker-service-logs-nginx--f)
 
 In the fast-paced world of application development, efficiency is key. Docker revolutionized the scene by offering lightweight containerization as an alternative to cumbersome virtual machines (VMs).
 
@@ -33,7 +34,7 @@ Docker Daemon (Host): A background process managing containers on the host machi
 Docker Registry: Repositories storing and distributing Docker images, like Docker Hub.
 
 <p align="center">
-  <img src="./image/high-level-overview-of-docker-architecture.png" alt="Docker Architecture"/>
+  <img src="./image/high-level-overview-of-docker-architecture.png" alt="Docker Architecture" width="600" height="300"/>
 </p>
 
 ## 4. Kubernetes VS Docker Swarm
@@ -41,7 +42,7 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
 Modern businesses are relying on containerization technologies to simplify the process of deploying and managing complex applications.Here's a comparison between Kubernetes and Docker Swarm.
 
 <p align="center">
-  <img src="./image/docker-swram-k8s.png" alt="Docker Architecture" width="500" height="300"/>
+  <img src="./image/docker-swram-k8s.png" alt="Docker swram vs K8s" width="500" height="300"/>
 </p>
 
 | Feature                 | Kubernetes                                     | Docker Swarm                                      |
@@ -101,7 +102,7 @@ Docker Swarm works by orchestrating a cluster of Docker hosts, enabling users to
 9. Security: Docker Swarm offers security features such as mutual TLS authentication, encryption of network traffic, and role-based access control (RBAC) to protect the cluster and its resources from unauthorized access and malicious activities.
 
 <p align="center">
-  <img src="./image/docker-swarm-architecture.png" alt="Docker Swarm Architecture"/>
+  <img src="./image/docker-swarm-architecture.png" alt="Docker Swarm Architecture" width="600" height="400"/>
 </p>
 
 
@@ -121,7 +122,7 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 
 **7.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
 
-**7.2 Initializing a Swarm**[Reference](https://docs.docker.com/engine/swarm/)
+**7.2 Initializing a Swarm [Reference](https://docs.docker.com/engine/swarm/)**
 
 Initialize Swarm\
 `docker swarm init`
@@ -166,7 +167,8 @@ Node itself Leave from cluster.\
 ## 8. Deploy Your Service on Docker Swarm
 
 To add replicas to the Docker Swarm service with replicas.\
-`docker service create --name nginx --publish 80:80 --replicas 3 nginx`\
+`docker service create --name nginx --publish 80:80 --replicas 3 nginx`
+
 To list the services in a Docker Swarm cluster.\
 `docker service ls`
 
@@ -176,4 +178,6 @@ To update the number of replicas for a Docker Swarm service.\
 To delete the "nginx" service in Docker Swarm.\
 `docker service rm nginx`
 
+To see Service Logs.\
+`sudo docker service logs nginx -f`
 ---
