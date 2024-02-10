@@ -4,6 +4,7 @@ Table Of Content:
   - [1.What is Docker?](#1what-is-docker)
   - [2.What is Docker daemon?](#2what-is-docker-daemon)
   - [3.Docker architecture](#3docker-architecture)
+  - [Kubernetes VS Docker Swarm](#kubernetes-vs-docker-swarm)
   - [4.What Is Docker Swarm?](#4what-is-docker-swarm)
   - [5. How Does Docker Swarm Work?](#5-how-does-docker-swarm-work)
   - [6. Docker Swarm Cluster Setup](#6-docker-swarm-cluster-setup)
@@ -34,6 +35,24 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
 <p align="center">
   <img src="./image/high-level-overview-of-docker-architecture.png" alt="Docker Architecture"/>
 </p>
+
+## Kubernetes VS Docker Swarm
+
+| Feature                 | Kubernetes                                     | Docker Swarm                                      |
+|-------------------------|------------------------------------------------|---------------------------------------------------|
+| **Orchestration**       | Advanced orchestration capabilities.           | Simplified orchestration.                         |
+| **Scaling**             | Horizontal and vertical scaling of containers.  | Horizontal scaling of services.                   |
+| **High Availability**   | Built-in high availability features.           | High availability with automatic failover.        |
+| **Networking**          | Advanced networking features.                  | Basic networking with overlay networks.           |
+| **Load Balancing**      | Robust built-in load balancing.                | Basic load balancing capabilities.                |
+| **Service Discovery**   | Integrated service discovery mechanisms.       | Service discovery using DNS or user-defined names.|
+| **Storage Orchestration** | Support for persistent storage.              | Limited support for storage orchestration.        |
+| **Security**            | Rich set of security features and policies.    | Basic security features with TLS encryption.      |
+| **Community Support**   | Large and active community.                    | Active community support but smaller than Kubernetes.|
+| **Ease of Use**         | Steeper learning curve, more complex setup.    | Simpler setup and easier to get started with.      |
+| **Resource Utilization** | Efficient resource utilization.                | Efficient resource utilization.                   |
+| **Popularity**          | Widely adopted by enterprises and cloud providers. | Gaining popularity, but not as widely adopted as Kubernetes. |
+| **Ecosystem**           | Rich ecosystem with extensive tools and integrations. | Growing ecosystem with fewer tools and integrations compared to Kubernetes. |
 
 ## 4.What Is Docker Swarm?
 
