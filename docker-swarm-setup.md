@@ -41,7 +41,7 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
 Modern businesses are relying on containerization technologies to simplify the process of deploying and managing complex applications.Here's a comparison between Kubernetes and Docker Swarm.
 
 <p align="center">
-  <img src="./image/docker-swram-k8s.png" alt="Docker Architecture" width="400" height="300"/>
+  <img src="./image/docker-swram-k8s.png" alt="Docker Architecture" width="500" height="300"/>
 </p>
 
 | Feature                 | Kubernetes                                     | Docker Swarm                                      |
