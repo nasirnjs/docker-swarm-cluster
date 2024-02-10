@@ -9,7 +9,6 @@ Table Of Content:
   - [6. How Does Docker Swarm Work?](#6-how-does-docker-swarm-work)
   - [7. Docker Swarm Cluster Setup](#7-docker-swarm-cluster-setup)
   - [8. Deploy Your Service on Docker Swarm](#8-deploy-your-service-on-docker-swarm)
-  - [`sudo docker service logs nginx -f`](#sudo-docker-service-logs-nginx--f)
 
 In the fast-paced world of application development, efficiency is key. Docker revolutionized the scene by offering lightweight containerization as an alternative to cumbersome virtual machines (VMs).
 
@@ -124,10 +123,10 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 
 **7.2 Initializing a Swarm [Reference](https://docs.docker.com/engine/swarm/)**
 
-Initialize Swarm\
+Initialize Swarm.\
 `docker swarm init`
 
-Initialize Swarm with specific address\
+Initialize Swarm with specific address.\
 `docker swarm init --advertise-addr <MANAGER-IP>`
 
 Generate tocken for node join as manager.\
@@ -136,12 +135,12 @@ Generate tocken for node join as manager.\
 Generate tocken for node join as worker.\
 `docker swarm join-token worker`
 
-Forcely advertise a cluster.
+Forcely advertise a cluster.\
 `docker swarm init --force-new-cluster --advertise-addr <MANAGER-IP>`
 
 **7.3 Joining Nodes to Swarm**
 
-Join as a worker
+Join as a worker.\
 `docker swarm join --token <TOKEN> <MANAGER-IP>:<PORT>`
 
 **7.4 Managing Nodes**
@@ -180,4 +179,5 @@ To delete the "nginx" service in Docker Swarm.\
 
 To see Service Logs.\
 `sudo docker service logs nginx -f`
+
 ---
