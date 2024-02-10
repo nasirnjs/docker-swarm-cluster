@@ -1,12 +1,13 @@
-Mastering Docker Swarm & Simplifying Container Orchestration
+# Mastering Docker Swarm & Simplifying Container Orchestration
 Table Of Content:
-- [1.What is Docker?](#1what-is-docker)
-- [2.What is Docker daemon?](#2what-is-docker-daemon)
-- [3.Docker architecture](#3docker-architecture)
-- [4.What Is Docker Swarm?](#4what-is-docker-swarm)
-- [5. How Does Docker Swarm Work?](#5-how-does-docker-swarm-work)
-- [6. Docker Swarm Cluster Setup](#6-docker-swarm-cluster-setup)
-- [7.Deploy Your Service on Docker Swarm](#7deploy-your-service-on-docker-swarm)
+- [Mastering Docker Swarm \& Simplifying Container Orchestration](#mastering-docker-swarm--simplifying-container-orchestration)
+  - [1.What is Docker?](#1what-is-docker)
+  - [2.What is Docker daemon?](#2what-is-docker-daemon)
+  - [3.Docker architecture](#3docker-architecture)
+  - [4.What Is Docker Swarm?](#4what-is-docker-swarm)
+  - [5. How Does Docker Swarm Work?](#5-how-does-docker-swarm-work)
+  - [6. Docker Swarm Cluster Setup](#6-docker-swarm-cluster-setup)
+  - [7.Deploy Your Service on Docker Swarm](#7deploy-your-service-on-docker-swarm)
 
 In the fast-paced world of application development, efficiency is key. Docker revolutionized the scene by offering lightweight containerization as an alternative to cumbersome virtual machines (VMs).
 
@@ -93,10 +94,9 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 6. Consistent Docker Versions: Use the same Docker version on all nodes.
 7. Sufficient Resources: Nodes should have enough CPU, memory, and disk space.
 
-6.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)
+**6.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
 
-
-6.2 Initializing a Swarm
+**6.2 Initializing a Swarm**
 
 Initialize Swarm\
 `docker swarm init`
@@ -113,11 +113,13 @@ Generate tocken for node join as worker.\
 Forcely advertise a cluster.
 `docker swarm init --force-new-cluster --advertise-addr <MANAGER-IP>`
 
-6.3 Joining Nodes to Swarm
+**6.3 Joining Nodes to Swarm**
+
 Join as a worker
 `docker swarm join --token <TOKEN> <MANAGER-IP>:<PORT>`
 
-6.4 Managing Nodes
+**6.4 Managing Nodes**
+
 List Nodes\
 `docker node ls`
 
