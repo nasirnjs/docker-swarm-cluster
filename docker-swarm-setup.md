@@ -121,8 +121,8 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 
 **7.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
 
-**7.2 Initializing a Swarm**
-
+**7.2 Initializing a Swarm**\
+[Reference](https://docs.docker.com/engine/swarm/)\
 Initialize Swarm\
 `docker swarm init`
 
@@ -165,7 +165,15 @@ Node itself Leave from cluster.\
 
 ## 8.Deploy Your Service on Docker Swarm
 
+To add replicas to the Docker Swarm service with replicas.\
+`docker service create --name nginx --publish 80:80 --replicas 3 nginx`
+To list the services in a Docker Swarm cluster.\
+`docker service ls`
 
+To update the number of replicas for a Docker Swarm service.
+`docker service update --replicas 5 nginx`
 
+To delete the "nginx" service in Docker Swarm.\
+`docker service rm nginx`
 
 ---
