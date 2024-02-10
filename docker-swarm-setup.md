@@ -4,11 +4,11 @@ Table Of Content:
   - [1.What is Docker?](#1what-is-docker)
   - [2.What is Docker daemon?](#2what-is-docker-daemon)
   - [3.Docker architecture](#3docker-architecture)
-  - [Kubernetes VS Docker Swarm](#kubernetes-vs-docker-swarm)
-  - [4.What Is Docker Swarm?](#4what-is-docker-swarm)
-  - [5. How Does Docker Swarm Work?](#5-how-does-docker-swarm-work)
-  - [6. Docker Swarm Cluster Setup](#6-docker-swarm-cluster-setup)
-  - [7.Deploy Your Service on Docker Swarm](#7deploy-your-service-on-docker-swarm)
+  - [4.Kubernetes VS Docker Swarm](#4kubernetes-vs-docker-swarm)
+  - [5.What Is Docker Swarm?](#5what-is-docker-swarm)
+  - [6. How Does Docker Swarm Work?](#6-how-does-docker-swarm-work)
+  - [7. Docker Swarm Cluster Setup](#7-docker-swarm-cluster-setup)
+  - [8.Deploy Your Service on Docker Swarm](#8deploy-your-service-on-docker-swarm)
 
 In the fast-paced world of application development, efficiency is key. Docker revolutionized the scene by offering lightweight containerization as an alternative to cumbersome virtual machines (VMs).
 
@@ -36,7 +36,13 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
   <img src="./image/high-level-overview-of-docker-architecture.png" alt="Docker Architecture"/>
 </p>
 
-## Kubernetes VS Docker Swarm
+## 4.Kubernetes VS Docker Swarm
+
+Modern businesses are relying on containerization technologies to simplify the process of deploying and managing complex applications.Here's a comparison between Kubernetes and Docker Swarm.
+
+<p align="center">
+  <img src="./image/docker-swram-k8s.png" alt="Docker Architecture" width="400" height="300"/>
+</p>
 
 | Feature                 | Kubernetes                                     | Docker Swarm                                      |
 |-------------------------|------------------------------------------------|---------------------------------------------------|
@@ -54,7 +60,7 @@ Docker Registry: Repositories storing and distributing Docker images, like Docke
 | **Popularity**          | Widely adopted by enterprises and cloud providers. | Gaining popularity, but not as widely adopted as Kubernetes. |
 | **Ecosystem**           | Rich ecosystem with extensive tools and integrations. | Growing ecosystem with fewer tools and integrations compared to Kubernetes. |
 
-## 4.What Is Docker Swarm?
+## 5.What Is Docker Swarm?
 
 Docker Swarm is a container orchestration tool that allows you to manage a cluster of Docker hosts and deploy and scale containerized applications seamlessly. It forms a part of the Docker ecosystem and simplifies the management of containerized environments, making it easier for developers and operators to deploy and maintain applications at scale.
 
@@ -72,7 +78,7 @@ Docker Swarm is a container orchestration tool that allows you to manage a clust
 6. Ease of Use: With a simple and intuitive command-line interface, Docker Swarm is easy to set up and use, making it accessible to both developers and operators.
 
 
-## 5. How Does Docker Swarm Work?
+## 6. How Does Docker Swarm Work?
 
 Docker Swarm works by orchestrating a cluster of Docker hosts, enabling users to deploy and manage containerized applications across multiple nodes seamlessly. Here's an overview of how Docker Swarm operates:
 
@@ -99,7 +105,7 @@ Docker Swarm works by orchestrating a cluster of Docker hosts, enabling users to
 </p>
 
 
-## 6. Docker Swarm Cluster Setup
+## 7. Docker Swarm Cluster Setup
 
 Setting up your first Docker Swarm Demo can indeed be a rewarding experience, showcasing the capabilities of containerized applications. To help you get started, here are the steps to set up your first Docker Swarm Demo.
 
@@ -113,9 +119,9 @@ Setting up your first Docker Swarm Demo can indeed be a rewarding experience, sh
 6. Consistent Docker Versions: Use the same Docker version on all nodes.
 7. Sufficient Resources: Nodes should have enough CPU, memory, and disk space.
 
-**6.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
+**7.1 Install Docker from [Here](https://docs.docker.com/engine/install/ubuntu/)**
 
-**6.2 Initializing a Swarm**
+**7.2 Initializing a Swarm**
 
 Initialize Swarm\
 `docker swarm init`
@@ -132,12 +138,12 @@ Generate tocken for node join as worker.\
 Forcely advertise a cluster.
 `docker swarm init --force-new-cluster --advertise-addr <MANAGER-IP>`
 
-**6.3 Joining Nodes to Swarm**
+**7.3 Joining Nodes to Swarm**
 
 Join as a worker
 `docker swarm join --token <TOKEN> <MANAGER-IP>:<PORT>`
 
-**6.4 Managing Nodes**
+**7.4 Managing Nodes**
 
 List Nodes\
 `docker node ls`
@@ -157,7 +163,7 @@ Remove Node from Swarm\
 Node itself Leave from cluster.\
 `docker swarm leave`
 
-## 7.Deploy Your Service on Docker Swarm
+## 8.Deploy Your Service on Docker Swarm
 
 
 
