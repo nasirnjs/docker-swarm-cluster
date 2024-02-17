@@ -38,7 +38,19 @@ services:
     ports:
       - "80:80"
 ```
-` docker stack deploy -c nginx-svc.yaml nginx-stack`
+`docker stack deploy -c nginx-svc.yaml nginx-stack`
 
 `docker service ls`
+
+To update the number of replicas for the nginx-stack_nginx service.\
+`docker service scale nginx-stack_nginx=5`
+
+Update the Docker Swarm stack image using imperative commands.\
+`docker service update --image nginx:alpine3.18-slim nginx-stack_nginx`
+
+To determine the service name.\
+`docker service ls`
+
+To determine which Docker image is currently being used by a service within your Docker Swarm stack.\
+`docker service inspect --format='{{ index .Spec.TaskTemplate.ContainerSpec.Image }}' nginx-stack_nginx`
 
