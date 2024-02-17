@@ -15,3 +15,30 @@ Check Docker Swarm Visualizer service.\
 
 Now browse your Swarm manager IP with Port.\
 `http://172.17.18.220:8080`
+
+To create an Nginx service in a Docker Swarm.\
+```
+docker service create \
+  --name nginx-service \
+  --publish published=80,target=80 \
+  --replicas 3 \
+  nginx:latest
+```
+
+To create a Docker Swarm service using a YAML file.
+`vim nginx-svc.yaml`
+```bash
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    deploy:
+      replicas: 2
+    ports:
+      - "80:80"
+```
+` docker stack deploy -c nginx-svc.yaml nginx-stack`
+
+`docker service ls`
+
