@@ -37,7 +37,7 @@ Exect into Container.\
 `docker exec -it 233887de3a81 bash`
 
 Login to Mysql Container using define pass.\
-`bash-4.4# mysql -u root -p`
+`mysql -u root -p`
 
 Remove the stack: Use the docker stack rm command to remove the stack.\
 `docker stack rm mysql-stack`
