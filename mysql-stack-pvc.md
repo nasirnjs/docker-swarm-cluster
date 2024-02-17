@@ -77,3 +77,42 @@ volumes:
 Inspect Docker volume with volume name, `docker volume ls` then inspect the volume.\
 `docker volume inspect  mysql-stack_mysql_data`
 
+
+### Steps3(Optional): create My-SQL Stack with `secret` as usr NFS Server for Persist Volume
+
+Create Secret for MySQL
+`echo "Asdf1234" | docker secret create mysql_root_password -`
+
+```
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+    secrets:
+      - mysql_root_password
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+secrets:
+  mysql_root_password:
+    external: true
+
+volumes:
+  mysql_data:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=172.17.18.120,rw
+      device: ":/var/k8-nfs/data"
+```
+`docker stack deploy -c mysql-sec.yaml mysql-stack`
