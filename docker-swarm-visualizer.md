@@ -16,7 +16,7 @@ Check Docker Swarm Visualizer service.\
 Now browse your Swarm manager IP with Port.\
 `http://172.17.18.220:8080`
 
-To create an Nginx service in a Docker Swarm.\
+To create an Nginx service in a Docker Swarm.
 ```
 docker service create \
   --name nginx-service \
