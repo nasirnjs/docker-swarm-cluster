@@ -80,12 +80,11 @@ Inspect Docker volume with volume name, `docker volume ls` then inspect the volu
 
 ### Steps3(Optional): create My-SQL Stack with `secret` as usr NFS Server for Persist Volume
 
-Create Secret for MySQL
+Create Secret for MySQL.\
 `echo "Asdf1234" | docker secret create mysql_root_password -`
 
 ```
 version: '3.8'
-
 services:
   mysql:
     image: mysql:latest
@@ -102,11 +101,9 @@ services:
         condition: on-failure
     volumes:
       - mysql_data:/var/lib/mysql
-
 secrets:
   mysql_root_password:
     external: true
-
 volumes:
   mysql_data:
     driver: local
@@ -116,3 +113,15 @@ volumes:
       device: ":/var/k8-nfs/data"
 ```
 `docker stack deploy -c mysql-sec.yaml mysql-stack`
+
+To list all secrets in a Docker Swarm cluster.\
+`docker secret ls`
+
+Now exect to mysql docker container and login to MySQL with secret.
+
+List the services in your stack to identify the name of the service.\
+`docker stack services mysql-stack`
+
+Service name is mysql and you want to scale it to 5 replicas.\
+`docker service scale mysql-stack_mysql=5`
+
