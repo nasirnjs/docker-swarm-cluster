@@ -44,7 +44,7 @@ On the worker and master nodes, install nfs-common package using following
 `sudo apt install nfs-common -y`
 
 
-### Steps2: create My-SQL Stack as usr NFS Server for Persist Volume
+### Steps2: create My-SQL Stack as uses NFS Server for Persist Volume
 
 `vim mysql-pvc-stack.yaml`
 ```bash

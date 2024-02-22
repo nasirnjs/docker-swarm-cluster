@@ -163,6 +163,13 @@ Remove Node from Swarm\
 Node itself Leave from cluster.\
 `docker swarm leave`
 
+Node to "drain" availability, it means that the node is being taken out of service gracefully.\
+`docker node update --availability=drain node1`
+
+Setting a node's availability to "active" means that the node is available to receive new tasks and services.\
+`docker node update --availability=active node1`
+
+
 ## 8. Deploy Your Service on Docker Swarm
 
 To add replicas to the Docker Swarm service with replicas.\
