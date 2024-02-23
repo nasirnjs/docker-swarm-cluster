@@ -169,6 +169,8 @@ Node to "drain" availability, it means that the node is being taken out of servi
 Setting a node's availability to "active" means that the node is available to receive new tasks and services.\
 `docker node update --availability=active node1`
 
+To get the existing Docker Swarm manager join token.\
+`docker swarm join-token manager`
 
 ## 8. Deploy Your Service on Docker Swarm
 
