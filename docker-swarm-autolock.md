@@ -33,6 +33,10 @@ Rotate the unlock key.\
 `docker swarm unlock-key --rotate`
 
 
+Docker swram Certificate location `/var/lib/docker/swarm/certificates`
+
 [References](https://docs.docker.com/engine/swarm/swarm_manager_locking/)
+
+[Raft Logs](https://dreamlab.net/en/blog/post/dump-the-raft-logs-in-docker-swarm-to-get-secrets-and-more/)
 
 
