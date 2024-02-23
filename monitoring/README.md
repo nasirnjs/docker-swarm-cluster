@@ -15,6 +15,8 @@ First create a network.\
 Then run Stack.\
 `docker stack deploy -c prometheus-stack.yml promethous`
 
+To update specific Server.\
+`docker service update --force promethous_grafana`
 
 CPU uses query
 ==============
