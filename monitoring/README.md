@@ -1,7 +1,17 @@
-docker network create --driver=overlay monitoring
-docker stack deploy -c prometheus-stack.yml promethous
 
+Make monitoring directory and keep scrape and stack both both file in same directory. 
 
+```bash
+└── monitoring
+    ├── prometheus-scrape.yml
+    ├── promethous-stack.yaml
+    └── README.md
+```
+First create a network.\
+`docker network create --driver=overlay monitoring`
+
+Then run Stack.\
+`docker stack deploy -c prometheus-stack.yml promethous`
 
 
 CPU uses query
