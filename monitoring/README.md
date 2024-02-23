@@ -2,6 +2,8 @@ docker network create --driver=overlay monitoring
 docker stack deploy -c prometheus-stack.yml promethous
 
 
+
+
 CPU uses query
 ==============
 100 - (avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
@@ -13,4 +15,13 @@ Memory Query
 Network Query
 =============
 irate(node_network_receive_bytes_total[5m])
+
+
+Cadvisor exporter
+=================
+14282
+
+Node Exporter
+=============
+1860
 
