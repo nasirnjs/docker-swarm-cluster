@@ -1,0 +1,16 @@
+docker network create --driver=overlay monitoring
+docker stack deploy -c prometheus-stack.yml promethous
+
+
+CPU uses query
+==============
+100 - (avg(irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+
+Memory Query
+============
+(node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes * 100
+
+Network Query
+=============
+irate(node_network_receive_bytes_total[5m])
+
