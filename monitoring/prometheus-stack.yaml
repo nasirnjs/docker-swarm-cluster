@@ -5,9 +5,11 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus-scrape.yaml:/etc/prometheus/prometheus-scrape.yaml
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--config.file=/etc/prometheus/prometheus-scrape.yaml'
+    networks:
+      - monitoring
   node-exporter:
     image: prom/node-exporter
     ports:
