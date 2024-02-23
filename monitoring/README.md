@@ -3,8 +3,8 @@ Make monitoring directory and keep scrape and stack both both file in same direc
 
 ```bash
 └── monitoring
-    ├── prometheus-scrape.yml
-    ├── promethous-stack.yaml
+    ├── prometheus-scrape.yaml
+    ├── prometheus-stack.yaml
     └── README.md
 ```
 First create a network.\
