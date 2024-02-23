@@ -188,3 +188,6 @@ To see Service Logs.\
 `sudo docker service logs nginx -f`
 
 ---
+
+
+[References for Update](https://www.simplilearn.com/tutorials/docker-tutorial/docker-swarm)
