@@ -7,6 +7,8 @@ Make monitoring directory and keep scrape and stack both both file in same direc
     ├── prometheus-stack.yaml
     └── README.md
 ```
+**Before apply update IP of your Cluster in scrape.yaml file**
+
 First create a network.\
 `docker network create --driver=overlay monitoring`
 
