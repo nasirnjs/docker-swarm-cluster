@@ -6,6 +6,7 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus-scrape.yaml:/etc/prometheus/prometheus-scrape.yaml
+      - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus-scrape.yaml'
     networks:
@@ -24,6 +25,8 @@ services:
       - "3000:3000"
     networks:
       - monitoring
+    volumes:
+      - grafana_data:/var/lib/grafana
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     ports:
@@ -40,3 +43,7 @@ services:
 networks:
   monitoring:
     external: true
+
+volumes:
+  prometheus_data:
+  grafana_data:
